@@ -73,7 +73,7 @@ namespace Paint_Project
         private void InfoButton_Click(object sender, EventArgs e)
         {
             FileMenu_Close(sender, e);
-            MessageBox.Show("Designed by Hita\nMay & June 2015", "About");
+            MessageBox.Show("Paint v0.2\nBy Hita B. Mamagani\n2015-2023", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
 
@@ -104,7 +104,7 @@ namespace Paint_Project
                 }
                 else
                     if (dr == DialogResult.No)
-                        NewPage();
+                    NewPage();
             }
             else
                 NewPage();
@@ -739,7 +739,8 @@ namespace Paint_Project
         {
             if (touched == true)
             {
-                DialogResult dr = MessageBox.Show("Do you want to save current work before exiting?", "Caution", MessageBoxButtons.YesNoCancel);
+                var dr = MessageBox.Show("Do you want to save current work before exiting?", "Caution",
+                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
                     Save_Click(Save, EventArgs.Empty);
